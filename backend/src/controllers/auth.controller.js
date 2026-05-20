@@ -107,7 +107,8 @@ export const updateProfile = async (req, res) => {
       {
         profilePic: uploadedResponse.secure_url,
       },
-      { new: true },
+      // { new: true }, // deprecated
+      { returnDocument: 'after' },
     );
 
     if (updatedUser) {
